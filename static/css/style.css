@@ -2719,14 +2719,19 @@ input[type=number]::-webkit-outer-spin-button {
       width: 100%; }
     .services-section-page.welcome-section .services-detail .services-price table, .services-section-page.welcome-section .services-detail .services-price td {
       border: 1px solid #e5e5e5; }
+    .services-section-page.welcome-section .services-detail .services-price table, .services-section-page.welcome-section .services-detail .services-price th {
+      border: 1px solid #e5e5e5; }  
     .services-section-page.welcome-section .services-detail .services-price tr:nth-child(odd) {
       background-color: #f2f2f2; }
     .services-section-page.welcome-section .services-detail .services-price td {
-      width: 50%;
+      /* width: 50%; */
       font-size: 16px;
-      padding: 15px 25px 18px; }
-      .services-section-page.welcome-section .services-detail .services-price td:first-child {
-        text-align: right; }
+      padding: 10px 10px 10px; }
+      /* .services-section-page.welcome-section .services-detail .services-price td:first-child {
+        text-align: right; } */
+      .services-section-page.welcome-section .services-detail .services-price th {
+        font-size: 16px;
+        padding: 10px 10px 10px; }
   .services-section-page.welcome-section .services-detail .welcome-content {
     margin-top: 0;
     padding-left: 10px; }
