@@ -1,0 +1,131 @@
+{% extends 'baseapp/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+{% if seo_information %}
+{{ seo_information.title }}
+{% else %}
+Ремонт двигателя | МАЗ, КАМАЗ, ЯМЗ, CUMMINS, VOLVO, SKANIA
+{% endif %}
+{% endblock %}
+
+{% block description %}
+{% if seo_information %}
+{{ seo_information.description }}
+{% else %}
+Капитальный ремонт двигателя отечественных и иностранных производителей.
+{% endif %}
+{% endblock %}
+
+{% block keywords %}
+{% if seo_information %}
+{{ seo_information.keywords }}
+{% else %}
+ремонт двс, ремонт двс белгород, замена двигателя
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-content">
+
+	<section class="breadcrumb-clean-service breadcrumb-section section-box" style="background-image: url(../../static/images/img/banners/breadcrumbs_img.jpg)">
+		<div class="container">
+			<div class="breadcrumb-inner">
+				<h1>ДВС</h1>
+				<ul class="breadcrumbs">
+					<li><a class="breadcrumbs-1" href="{% url 'show_index' %}">Главная</a></li>
+					<li><p class="breadcrumbs-2">ДВС</p></li>
+				</ul>
+			</div>	
+		</div>
+	</section>
+
+	<section class="services-section-page welcome-section section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+					<div class="services-list">
+						<ul>
+							<li class="active"><a href="{% url 'show_dvs_page' %}">ДВС</a></li>
+							<li><a href="{% url 'show_kpp_page' %}">КПП</a></li>
+							<li><a href="{% url 'show_reductor_page' %}">РЕДУКТОРЫ</a></li>
+							<li><a href="{% url 'show_tnvd_page' %}">ТНВД</a></li>
+							<li><a href="{% url 'show_forsunki_page' %}">ФОРСУНКИ</a></li>
+							<li><a href="{% url 'show_tachograph_page' %}">ТАХОГРАФЫ</a></li>
+							<li><a href="{% url 'show_other_page' %}">ПРОЧЕЕ</a></li>
+						</ul>
+					</div>
+					<!-- <div class="discount">
+						<span class="percent">-25%</span>
+						<span class="text-1">APPOINTMENT</span>
+						<span class="text-2">Online</span>
+						<a href="#" class="au-btn au-btn-green btn-small">Make Appointment</a>
+					</div> -->
+				</div>
+				<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+					<div class="services-detail">
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 colmd-12 col-sm-12 col-12">
+								<div class="services-price">
+									<h2 class="special-heading">МЫ ПРОИЗВОДИМ СЛЕДУЮЩИЙ РЕМОНТ ДВС</h2>
+									<table>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> КАМАЗ</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> ЯМЗ — 236, ЯМЗ — 238, ЯМЗ — 7511, ЯМЗ — 530, ЯМЗ — 650, ЯМЗ-ГАЗ</td>
+
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Cummins 4ц — 6ц</td>
+
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Снятие, установка ДВС</td>
+
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Ремонт ГБЦ КАМАЗ, Ремонт ГБЦ МАЗ</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> <i class="fa fa-check"></i> Опрессовка ГБЦ</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> <i class="fa fa-check"></i> Снятие, установка ТНВД</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Замер компрессии 1 цилиндра</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<!-- <div class="col-xl-6 col-lg-6 colmd-6 col-sm-12 col-12 pt-3">
+								<div class="services-first">
+									<img src="{% static 'images/img/dvs.jpg' %}" alt="service">
+								</div>
+							</div> -->
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="cta-section cta-our-team cta-hp-5 section-box">
+		<div class="container">
+			<div class="cta-content">
+				<div class="cta-text">
+					<p>Расходники всегда в наличии!</p>
+					<span>Нужно сделать ТО? Мы поможем!</span>
+				</div>
+				{% comment %} <a href="" class="au-btn btn-small" data-toggle="modal" data-target="#modalContactForm">Заказать звонок</a> {% endcomment %}
+				<a href="{% url 'show_contact_page' %}" class="au-btn btn-small">Заказать звонок</a>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+{% endblock %}

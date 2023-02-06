@@ -1,0 +1,328 @@
+{% extends 'baseapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+{% if seo_information %}
+{{ seo_information.title }}
+{% else %}
+Грузовой сервис | Ремонт грузовиков и коммерческого транспорта
+{% endif %}
+{% endblock %}
+
+{% block description %}
+{% if seo_information %}
+{{ seo_information.description }}
+{% else %}
+Собственная ремонтная база автомастерской позволяет выполнять 
+периодическое обслуживание и устранение неисправностей коммерческой грузовой
+техники SCANIA, VOLVO, MERCEDES, MAN, КАМАЗ, МАЗ, ГАЗ и китайских грузовиков.
+{% endif %}
+{% endblock %}
+
+{% block keywords %}
+{% if seo_information %}
+{{ seo_information.keywords }}
+{% else %}
+грузовой сервис, грузовой сервис белгород, снрвис грузовых автомобилей
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-content">
+
+	<!-- Slider Revolution Section -->
+	<section class="home-slider style-home-slider-hp-1">
+		<div class="rev_slider_wrapper fullscreen-container" >
+			<!-- the ID here will be used in the inline JavaScript below to initialize the slider -->
+			<div id="rev_slider_1" class="rev_slider fullscreenbanner" data-version="5.4.5">
+				<ul> 
+					<!-- BEGIN SLIDE 1 -->
+					<li data-transition="boxslide">
+						<!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+						<img src="{% static 'images/img/banners/main_banner_1.jpg' %}" alt="slide-1" class="rev-slidebg">
+
+						<!-- BEGIN LAYER -->
+						<div class="tp-caption tp-resizeme slide-caption-title-1" 				                   	
+						data-frames='[{"delay":0,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
+						data-fontsize="['50', '50', '40', '40']" 
+						data-lineheight="['50', '50', '50', '50']"
+						data-color="#fff"
+						data-textAlign="['center', 'center', 'center', 'center']"
+						data-x="['center','center','center','center']"
+						data-y="['middle','middle','middle','middle']"
+						data-hoffset="['0', '0', '0', '0']" 
+						data-voffset="['-87', '-75', '-85', '-80']"
+						data-width="['1200', '770', '800', '800']" 
+						data-whitespace="normal"
+						data-basealign="slide" 
+						data-responsive_offset="off" >
+						СОБСТВЕННАЯ РЕМОНТНАЯ БАЗА
+					</div>
+					<div class="tp-caption tp-resizeme slide-caption-title-2"
+					data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
+					data-fontsize="['15', '17', '22', '25']" 
+					data-lineheight="['27', '30', '40', '50']"
+					data-color="#f2f2f2"
+					data-textAlign="['center', 'center', 'center', 'center']"
+					data-x="['center','center','center','center']"
+					data-y="['middle','middle','middle','middle']" 
+					data-hoffset="['0', '0', '0', '0']" 
+					data-voffset="['-16', '-2', '0', '-10']"
+					data-width="['700', '700', '650', '550']" 
+					data-whitespace="normal"
+					data-basealign="slide" 
+					data-responsive_offset="off" >
+					Выполняем периодическое обслуживание и устранение неисправностей коммерческой и грузовой техники разных марок.
+				</div>
+				<!-- <a href="clean-service.html" target="_self" class="tp-caption tp-resizeme au-btn au-btn-green btn-small btn-resize-slider-1"
+				data-frames='[{"delay":1000,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:20px;opacity:0;","ease":"Power3.easeInOut"}]'            
+				data-x="['center','center','center','center']"
+				data-y="['middle','middle','middle','middle']" 
+				data-hoffset="['0', '0', '0', '0']" 
+				data-voffset="['73', '100', '108', '90']"
+				data-basealign="slide" 
+				data-responsive_offset="off" >	
+				Read More	
+			</a> -->
+			<!-- END LAYER -->					          		
+		</li>
+		<!-- END SLIDE 1 -->
+
+		<!-- BEGIN SLIDE 2 -->
+		<li data-transition="boxslide">
+			<!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+			<img src="{% static 'images/img/banners/main_banner_2.jpg' %}" alt="slide-2" class="rev-slidebg">
+
+			<!-- BEGIN LAYER -->
+			<div class="tp-caption tp-resizeme slide-caption-title-1" 				                   	
+			data-frames='[{"delay":0,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
+			data-fontsize="['50', '50', '40', '40']" 
+			data-lineheight="['50', '50', '50', '50']"
+			data-color="#fff"
+			data-textAlign="['center', 'center', 'center', 'center']"
+			data-x="['center','center','center','center']"
+			data-y="['middle','middle','middle','middle']"
+			data-hoffset="['0', '0', '0', '0']" 
+			data-voffset="['-87', '-75', '-85', '-80']"
+			data-width="['1200', '770', '800', '800']" 
+			data-whitespace="normal"
+			data-basealign="slide" 
+			data-responsive_offset="off" 
+			>
+			ПОСТОЯННОЕ НАЛИЧИЕ НА СКЛАДЕ
+		</div>
+		<div class="tp-caption tp-resizeme slide-caption-title-2"
+		data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]'
+		data-fontsize="['15', '17', '22', '25']" 
+		data-lineheight="['27', '30', '40', '50']"
+		data-color="#f2f2f2"
+		data-textAlign="['center', 'center', 'center', 'center']"
+		data-x="['center','center','center','center']"
+		data-y="['middle','middle','middle','middle']" 
+		data-hoffset="['0', '0', '0', '0']" 
+		data-voffset="['-16', '-2', '0', '-10']"
+		data-width="['700', '700', '650', '550']" 
+		data-whitespace="normal"
+		data-basealign="slide" 
+		data-responsive_offset="off" >
+		В наличии большой выбор запчастей и расходных материалов,
+		оперативный заказ запчастей. <br>
+		100% СОБЛЮДЕНИЕ СРОКОВ! 
+	</div>
+	<!-- <a href="clean-service.html" target="_self" class="tp-caption tp-resizeme au-btn au-btn-green btn-small btn-resize-slider-1"
+	data-frames='[{"delay":1000,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:20px;opacity:0;","ease":"Power3.easeInOut"}]'            
+	data-x="['center','center','center','center']"
+	data-y="['middle','middle','middle','middle']" 
+	data-hoffset="['0', '0', '0', '0']" 
+	data-voffset="['73', '100', '108', '90']"
+	data-basealign="slide" 
+	data-responsive_offset="off" >					          			
+	See More
+</a> -->
+<!-- END LAYER -->
+</li>
+<!-- END SLIDE 2 --> 
+
+</ul>
+</div>
+</div>
+</section> 
+<!-- End Slider Revolution Section -->
+
+<section class="cta-section cta-our-team cta-hp-5 section-box">
+	<div class="container">
+		<div class="cta-content">
+			<div class="cta-text">
+				<p>Расходники всегда в наличии!</p>
+				<span>Нужно сделать ТО? Мы поможем!</span>
+			</div>
+			{% comment %} <a href="" class="au-btn btn-small" data-toggle="modal" data-target="#modalContactForm">Заказать звонок</a> {% endcomment %}
+			<a href="tel:+79051703006" class="au-btn btn-small">Позвонить</a>
+		</div>
+	</div>
+</section>
+
+
+<!-- Welcome Section -->
+<section class="welcome-section section-box js-waypoint pt-5 pb-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+				<div class="welcome-content">
+					<h2 class="special-heading">ГРУЗОВОЙ АВТОСЕРВИС</h2>
+					<p>
+						Наш автосервис предоставляет услуги по техническому обслуживанию и всем типам ремонта грузового автотранспорта и специализированной техники различных модификаций. Собственная ремонтная база автомастерской позволяет выполнять периодическое обслуживание и устранение неисправностей коммерческой грузовой техники SCANIA, VOLVO, MERCEDES, MAN, КАМАЗ, МАЗ, ГАЗ и китайских грузовиков.
+					</p>
+					<p>
+						Комплекс сервисных услуг включает полную диагностику узлов и систем, агрегатный ремонт грузовых автомобилей, восстановление после аварий, слесарные работы по ремонту подвески и компонентов тормозной системы, кузовной ремонт, настройку электрооборудования, модернизацию и переоборудование техники, установку тентов и дополнительного оборудования.
+					</p>	
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 pt-3">
+				<div class="welcome-image">
+					<img src="{% static 'images/img/truck_service.jpg' %}" alt="welcome">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Welcome Section -->
+
+<!-- Our Services Section --> 
+<section class="services-section-hp-3 section-box pt-1">
+	<div class="container">
+		<h2 class="special-heading">Наши преимущества</h2>
+		<div class="row">
+			<!-- Services-1 -->
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="services-content">
+					<div class="services-icon">
+						<img src="{% static 'images/img/icons/hp-3-service-blue-1.png' %}" alt="services-1" width="60">
+					</div>
+					<div class="services-text">
+						<span>ПРОФЕССИОНАЛИЗМ</span>
+						<p>Все работы выполняются в соответствии с регламентом профессионалами.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Services-2 -->
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="services-content">
+					<div class="services-icon">
+						<img src="{% static 'images/img/icons/hp-3-service-blue-3.png' %}" alt="services-2" width="60">
+					</div>
+					<div class="services-text">
+						<span>ГАРАНТИЯ КАЧЕСТВА</span>
+						<p>Высокое качество работ с последующей гарантией.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Services-3 -->
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="services-content">
+					<div class="services-icon">
+						<img src="{% static 'images/img/icons/hp-3-service-blue-4.png' %}" alt="services-3" width="60">
+					</div>
+					<div class="services-text">
+						<span>ЗАПЧАСТИ В НАЛИЧИИ</span>
+						<p>Все для ремонта, в наличии большой каталог запчастей и на заказ.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Services-4 -->
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="services-content">
+					<div class="services-icon">
+						<img src="{% static 'images/img/icons/hp-3-service-blue-2.png' %}" alt="services-4" width="60">
+					</div>
+					<div class="services-text">
+						<span>УДОБНОЕ РАСПОЛОЖЕНИЕ</span>
+						<p>Удобное расположение сервисного центра, подьехать можно с любой части города.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Services-5 -->
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="services-content">
+					<div class="services-icon">
+						<img src="{% static 'images/img/icons/hp-3-service-blue-5.png' %}" alt="services-5" width="60">
+					</div>
+					<div class="services-text">
+						<span>БЕЗ ОБЕДА И ВЫХОДНЫХ</span>
+						<p>Работаем без обеда и выходных, есть возможность ремонта в ночную смену.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Services-6 -->
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="services-content">
+					<div class="services-icon">
+						<img src="{% static 'images/img/icons/hp-3-service-blue-6.png' %}" alt="services-6" width="60">
+					</div>
+					<div class="services-text">
+						<span>СКИДКИ</span>
+						<p>Предлагаем всем клиентам - скидки, как постоянным так и новым - звоните.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Our Services Section -->
+
+
+<!-- Our Partner Section -->
+<section class="partner-section section-box">
+	<div class="container">
+		<h2 class="special-heading">МЫ ОБСЛУЖИВАЕМ</h2>
+		<div class="row justify-content-between">
+			<div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="partner-content">
+					<figure>
+						<img src="{% static 'images/img/brands/maz.png' %}" alt="">
+					</figure>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="partner-content">
+					<figure>
+						<img src="{% static 'images/img/brands/scania.png' %}" alt="">
+					</figure>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="partner-content">
+					<figure>
+						<img src="{% static 'images/img/brands/volvo.png' %}" alt="">
+					</figure>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="partner-content">
+					<figure>
+						<img src="{% static 'images/img/brands/mercedes.png' %}" alt="lasjfjas">
+					</figure>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-12">
+				<div class="partner-content">
+					<figure>
+						<img src="{% static 'images/img/brands/renault.png' %}" alt="">
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="map-section">
+	<div class="google-map-section google-map-section-v2 google-map-section-v3">
+		<div><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A99e5a2377ad783ff644e5e35064627c77bb949cac4560cc719e644f3477b0dfa&amp;source=constructor" width="100%" height="500" frameborder="5"></iframe></div>
+	</div>
+</section>
+
+</div>
+
+
+{% endblock %}

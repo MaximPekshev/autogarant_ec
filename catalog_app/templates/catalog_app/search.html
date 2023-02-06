@@ -1,0 +1,197 @@
+{% extends 'baseapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Каталог
+{% endblock %}
+
+{% block description %}
+Каталог
+{% endblock %}
+
+{% block keywords %}
+Каталог
+{% endblock %}
+
+{% block content %}
+<div class="page-content">
+		
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-shop-products breadcrumb-section section-box" style="background-image: url(../../static/images/img/banners/breadcrumbs_img.jpg)">
+    {% comment %} <section class="breadcrumb-shop-products breadcrumb-section section-box"> {% endcomment %}
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <h1>Каталог</h1>
+                <ul class="breadcrumbs">
+                    <li><a class="breadcrumbs-1" href="{% url 'show_index' %}">Главная</a></li>
+                    <li><p class="breadcrumbs-2">Поиск</p></li>
+                </ul>
+            </div>	
+        </div>
+    </section>
+    <!-- End Breadcrumb Section -->
+    
+    <!-- Product Section -->
+    <section class="shop-product-page blog-left-section section-box">
+        <div class="container-fluid">
+            <div class="woocommerce">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                        <div class="blog-left-sidebar widget-area">
+                            <!-- Search  -->
+                            <div class="widget_search-1 widget_search">
+                                <form class="search-form" method="get" role="search" action={% url 'show_search_result' %}>
+                                    <input type="search" name="q" class="search-field" placeholder="Поиск..." value="{{search_query}}">
+                                    <button class="search-submit" type="submit">
+                                        <i class="la la-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            {% comment %} {% if highest_price or lowest_price %}
+                            <!-- Filter -->
+                            <div class="widget_price_filter">
+                                <h3 class="widget-title">Фильтр по цене</h3>
+                                <div class="nouislider-price price_slider_wrapper">
+                                    <div id="slider-margin"></div>
+                                    <div class="price_slider_amount">
+                                        <div class="button">
+                                            <a href="#" class="au-btn au-btn-green btn-small">Фильтр</a>
+                                        </div>
+                                        <div class="price_label">
+                                            <span class="from" id="slider-margin-value-min">{{ highest_price }}</span>
+                                            <span class="to" id="slider-margin-value-max">{{ lowest_price }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %} {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        {% if is_paginated %}
+                        <div class="woocommerce-pagination pb-lg-5 m-0">
+                            <div class="page-numbers">
+                                <a href="{{ prev_url }}" class="next page-numbers">
+                                    <span><i class="fas fa-chevron-left"></i></span>
+                                </a>
+                                {% for n in page_object.paginator.page_range %}
+			                        {% if page_object.number == n %}
+                                        <a href="?q={{search_query}}&page={{ n }}" class="page-numbers current">
+                                            <span>{{ n }}</span>
+                                        </a>
+									{% elif n > page_object.number|add:-2 and n < page_object.number|add:3 %}
+                                        <a href="?q={{search_query}}&page={{ n }}" class="page-numbers">
+                                            <span>{{ n }}</span>
+                                        </a>
+									{% endif %}
+		                    	{% endfor %}
+                                <a href="{{ next_url }}" class="next page-numbers">
+                                    <span><i class="fas fa-chevron-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}    
+                        <div class="services-section-page welcome-section">
+                            <div class="services-detail">
+                                <div class="services-price table-responsive">
+                                    {% comment %} <h2 class="special-heading">OUR PRICING</h2> {% endcomment %}
+                                    <table>
+                                        <tr>
+                                            <th>Артикул</th>
+                                            <th>Наименование</th>
+                                            <th></th>
+                                            <th>Цена <span class="">&#8381</span></th>
+                                            <th>Остаток <span class="">шт.</span></th>
+                                        </tr>
+                                        {% if page_object.object_list %}   
+                                            {% for object in page_object.object_list %}
+                                            <tr>
+                                                <td>{{ object.art }}</td>
+                                                <td><a href="{% url 'show_good' uid=object.uid %}">{{ object.name }}</a></td>
+                                                <td>
+                                                    {% if object.get_stock_balance == 0 %}
+                                                    -
+                                                    {% else %}
+                                                    {% for balance in object.get_all_stock_balances %}
+                                                    {{ balance.division.short_name }}{{ balance.free }}, 
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ object.get_price }}</td>
+                                                <td>{{ object.get_stock_balance }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {% if is_paginated %}
+                        <div class="woocommerce-pagination">
+                            <div class="page-numbers">
+                                <a href="{{ prev_url }}" class="next page-numbers">
+                                    <span><i class="fas fa-chevron-left"></i></span>
+                                </a>
+                                {% for n in page_object.paginator.page_range %}
+			                        {% if page_object.number == n %}
+                                        <a href="?q={{search_query}}&page={{ n }}" class="page-numbers current">
+                                            <span>{{ n }}</span>
+                                        </a>
+									{% elif n > page_object.number|add:-2 and n < page_object.number|add:3 %}
+                                        <a href="?q={{search_query}}&page={{ n }}" class="page-numbers">
+                                            <span>{{ n }}</span>
+                                        </a>
+									{% endif %}
+		                    	{% endfor %}
+                                <a href="{{ next_url }}" class="next page-numbers">
+                                    <span><i class="fas fa-chevron-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+					    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Product Section -->
+
+</div>   
+
+{% endblock %}
+
+{% block custom_script %}
+<script>
+    /*noUiSlider*/
+    $(window).on('load', function() {
+        var marginSlider = document.getElementById('slider-margin');
+        if (marginSlider != undefined) {
+            /*Show the slider value*/
+            var marginMin = document.getElementById('slider-margin-value-min'),
+            marginMax = document.getElementById('slider-margin-value-max');
+            marginMin_value = Math.floor(`{{ lowest_price }}`.replace(",", "."));
+            marginMax_value = Math.floor(`{{ highest_price }}`.replace(",", "."));
+
+            noUiSlider.create(marginSlider, {
+                start: [ marginMin_value , marginMax_value ],
+                margin: 0,
+                connect: true,
+                range: {
+                    'min': marginMin_value,
+                    'max': marginMax_value
+                }
+            });
+
+            marginSlider.noUiSlider.on('update', function ( values, handle ) {
+                if ( handle ) {
+                    marginMax.innerHTML = values[handle];
+                } else {
+                    marginMin.innerHTML = values[handle];
+                }
+            });
+        }
+    });
+    /*End noUiSlider*/
+</script>    
+{% endblock %}

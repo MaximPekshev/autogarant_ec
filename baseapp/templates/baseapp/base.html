@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+	<head>
+		<!-- Basic Page Needs
+	  ================================================== -->
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<meta name="description" content="{% block description %}{% endblock %}">
+		<meta name="keywords" content="{% block keywords %}{% endblock %}" />
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+				m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(86910617, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/86910617" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter --> 
+
+		<!-- Mobile Specific Metas
+	  ================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!-- Favicon
+	  ================================================== -->	
+	  	<link rel="shortcut icon" href="{% static 'favicon.png' %}" />
+		<!-- Font
+	  ================================================== -->
+	  	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-5/css/fontawesome-all.min.css' %}">
+
+		<link rel="stylesheet" type="text/css" href="{% static 'fonts/line-awesome/css/line-awesome.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/opensans-font.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/lato-font.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/source-sans-pro-font.css' %}">
+		<!-- CSS   
+	  ================================================== -->
+		<!-- Bootrap -->
+		<link rel="stylesheet" href="{% static 'vendor/bootrap/css/bootstrap.min.css' %}"/>
+		<!-- Owl Carousel 2 -->
+		<link rel="stylesheet" href="{% static 'vendor/owl/css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/owl/css/owl.theme.default.min.css' %}">
+		<!-- Slider Revolution CSS Files -->
+	    <link rel="stylesheet" type="text/css" href="{% static 'vendor/revolution/css/settings.css' %}">
+	    <link rel="stylesheet" type="text/css" href="{% static 'vendor/revolution/css/layers.css' %}">
+	    <link rel="stylesheet" type="text/css" href="{% static 'vendor/revolution/css/navigation.css' %}">
+	    <!-- noUiSlider Library -->
+	    <link rel="stylesheet" type="text/css" href="{% static 'vendor/nouislider/css/nouislider.css' %}">
+	    <!-- fancybox-master Library -->
+	    <link rel="stylesheet" type="text/css" href="{% static 'vendor/fancybox-master/css/jquery.fancybox.min.css' %}">
+	    <!-- Main Style Css -->
+	    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+	    <link rel="stylesheet" href="{% static 'css/annasoft.css' %}"/>
+
+	    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+	    <script src="{% static 'vendor/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+	    <script src="{% static 'vendor/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+	    <script src="{% static 'vendor/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+		<script src="{% static 'vendor/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+		<script src="{% static 'vendor/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+	</head>
+
+	<body class="homepages-1">
+		<!-- Images Loader -->
+		<div class="images-preloader">
+		    <div id="preloader_1" class="rectangle-bounce">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		        <span></span>
+		    </div>
+		</div>
+		<header class="header">
+			<!-- Show Desktop Header -->
+			<div class="show-desktop-header header-hp-1">
+				<div class="top-header">
+					<div class="container">
+						<div class="top-header-inner">
+							<span>Ремонт грузовиков и спецтехники в Белгороде</span>
+							<div>
+								<a href="tel:+79051703006"><i class="fa fa-phone pr-2"></i>+7 (905) 170-30-06</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="js-navbar-fixed" class="menu-desktop">
+					<div class="container menu-desktop-inner">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="{% url 'show_index' %}"><img src="{% static 'images/icons/logo_ag.png' %}" alt="logo"></a>
+						</div>
+						<!-- Main Menu -->
+						<nav class="main-menu">
+							<ul>
+								{% comment %} <li class="menu-item">
+									<a href="{% url 'show_catalog' %}">
+										Каталог
+									</a> 
+								</li> {% endcomment %}
+								<li class="menu-item">
+									<a href="{% url 'show_dvs_page' %}">
+										ДВС
+									</a> 
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'show_kpp_page' %}">
+										КПП
+									</a> 
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'show_reductor_page' %}">
+										РЕДУКТОРЫ
+									</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'show_tnvd_page' %}">
+										ТНВД
+									</a> 
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'show_forsunki_page' %}">
+										ФОРСУНКИ
+									</a> 
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'show_tachograph_page' %}">
+										ТАХОГРАФЫ
+									</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'show_other_page' %}">
+										ПРОЧЕЕ
+									</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'show_contact_page' %}">
+										КОНТАКТЫ
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!-- Show Mobile Header -->
+			<div class="show-mobile-header">
+				<!-- Logo And Hamburger Button -->
+				<div class="mobile-top-header">
+					<div class="logo-mobile">
+						<a href="{% url 'show_index' %}"><img src="{% static 'images/icons/logo_ag.png' %}" alt="logo"></a>
+					</div>
+					<button class="hamburger hamburger--spin hidden-tablet-landscape-up" id="toggle-icon">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</div>
+				<!-- Au Navbar Menu -->
+				<div class="au-navbar-mobile navbar-mobile-1">
+					<div class="au-navbar-menu">
+						<ul>
+							{% comment %} <li class="drop">							
+								<a class="drop-link" href="{% url 'show_catalog' %}">
+									Каталог
+								</a>							
+							</li> {% endcomment %}
+							<li class="drop">							
+								<a class="drop-link" href="{% url 'show_dvs_page' %}">
+									ДВС
+								</a>							
+							</li>
+							<li class="drop">
+								<a class="drop-link" href="{% url 'show_kpp_page' %}">
+									КПП
+								</a>							
+							</li>
+							<li class="drop">							
+								<a class="drop-link" href="{% url 'show_reductor_page' %}">
+									РЕДУКТОРЫ
+								</a>							
+							</li>
+							<li class="drop">							
+								<a class="drop-link" href="{% url 'show_tnvd_page' %}">
+									ТНВД
+								</a>
+							</li>
+							<li class="drop">							
+								<a class="drop-link" href="{% url 'show_forsunki_page' %}">
+									ФОРСУНКИ
+								</a>							
+							</li>
+							<li class="drop">							
+								<a class="drop-link" href="{% url 'show_tachograph_page' %}">
+									ТАХОГРАФЫ
+								</a>							
+							</li>
+							<li class="drop">							
+								<a class="drop-link" href="{% url 'show_other_page' %}">
+									ПРОЧЕЕ
+								</a>							
+							</li>
+							<li class="drop">							
+								<a class="drop-link" href="{% url 'show_contact_page' %}">
+									КОНТАКТЫ
+								</a>							
+							</li>
+						</ul>
+					</div>				
+				</div>
+			</div>
+		</header>
+		{% block content %}
+
+		{% endblock %}
+
+		<footer class="footer">
+			<div class="footer-section section-box" style="background-color: grey;">
+				<!-- <div class="footer-section section-box" style="background-image: url(images/hp-1-bg-footer.jpg)"> -->
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 col-12">
+							<div class="footer-item">
+								<a href="index.html"><img src="{% static 'images/icons/logo_ag.png' %}" alt="logo"></a>
+								<p>Наш автосервис предоставляет услуги по техническому обслуживанию и всем типам ремонта грузового автотранспорта и специализированной техники различных модификаций.</p>
+								<!-- <div class="footer-socials">
+									<a href="#"><i class="fab fa-facebook-f"></i></a>
+									<a href="#"><i class="fab fa-whatsapp"></i></a>
+									<a href="#"><i class="fab fa-twitter"></i></a>
+									<a href="#"><i class="fab fa-behance"></i></a>
+								</div> -->
+							</div>
+						</div>
+						<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 col-12">
+							<div class="footer-item">
+								<h4><a href="clean-service.html">Услуги</a></h4>
+								<ul>
+									<li>
+										<a href="{% url 'show_dvs_page' %}">
+											<i class="la la-angle-right"></i>
+											ДВС
+										</a>
+									</li>
+									<li>
+										<a href="{% url 'show_kpp_page' %}">
+											<i class="la la-angle-right"></i>
+											КПП
+										</a>
+									</li>
+									<li>
+										<a href="{% url 'show_reductor_page' %}">
+											<i class="la la-angle-right"></i>
+											РЕДУКТОРЫ
+										</a>
+									</li>
+									<li>
+										<a href="{% url 'show_tnvd_page' %}">
+											<i class="la la-angle-right"></i>
+											ТНВД
+										</a>
+									</li>
+									<li>
+										<a href="{% url 'show_forsunki_page' %}">
+											<i class="la la-angle-right"></i>
+											ФОРСУНКИ
+										</a>
+									</li>
+									<li>
+										<a href="{% url 'show_tachograph_page' %}">
+											<i class="la la-angle-right"></i>
+											ТАХОГРАФЫ
+										</a>
+									</li>
+									<li>
+										<a href="{% url 'show_other_page' %}">
+											<i class="la la-angle-right"></i>
+											ПРОЧЕЕ
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6 col-12">
+							<div class="footer-item">
+								<h4><a href="">Контакты</a></h4>
+								<div class="contact-detail">
+									<i class="la la-home"></i>
+									<div class="contact-detail-inner">
+										<span>308023, г. Белгород Студенческая ул., 21Б</span>
+									</div>
+								</div>
+								<div class="contact-detail">
+									<i class="la la-hourglass"></i>
+									<div class="contact-detail-inner">
+										<span>Часы работы: ПН-ПТ 8:00 - 18:00</span>
+									</div>
+								</div>
+								<div class="contact-detail">
+									<i class="la la-mobile-phone"></i>
+									<div class="contact-detail-inner">
+										<span><a href="tel:+79051703006">Телефон: +7(905)170-30-06</a></span>
+									</div>
+								</div>
+								<div class="contact-detail">
+									<i class="la la-envelope"></i>
+									<div class="contact-detail-inner">
+										<span><a href="email:sto-gs@mail.ru">Email: sto-gs@mail.ru</a></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub-footer">
+				<p><span class="pr-2">2021 - {{ actual_year }}</span> Powered by <a href="https://annasoft.ru" target="_blank">Annasoft</a>
+			</div>
+		</footer>
+
+		{% comment %} <div class="modal fade bd-example-modal-lg" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="modalContactLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg " role="document">
+				<div class="modal-content">
+					<div class="modal-header" style="border-bottom: none;">
+						<h5 class="modal-title" id="modalContactLabel">СВЯЖИТЕСЬ С НАМИ</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="contact-form-section">
+							<div class="container">
+								<div class="quote-form col-lg-12 col-md-12">
+									<form id="contact-form" class="form-contact" method="POST" action="{% url 'send_contact_form' %}">
+										{% csrf_token %}
+										
+										<div class="row">
+											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 form-input">
+												{{ contact_form.contactName }}
+											</div>
+											<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 form-input">
+												{{ contact_form.contactPhone }}
+											</div>
+											<div class="col-12 form-textarea">
+												{{ contact_form.contactComment }}
+											</div>
+											<div class="form-input">
+												{{ contact_form.captcha }}
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div class="form-bottom" align="right">
+							<input data-dismiss="modal" type="submit" class="end-quote-1 au-btn au-btn-green btn-small" name="quote" value="Закрыть" style="cursor: pointer;">
+						</div>
+						<div class="form-bottom" align="right">
+							<input form="contact-form" type="submit" class="end-quote-1 au-btn au-btn-green btn-small" name="quote" value="Отправить" style="cursor: pointer;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> {% endcomment %}
+
+
+		<!-- Back To Top Button -->
+		<a href="#" id="back-to-top">
+			<i class="la la-arrow-up"></i>
+		</a>
+		<!-- End Back To Top Button -->
+
+		<!-- Bootrap -->
+		<script src="{% static 'vendor/bootrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'vendor/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+		<!-- Owl Carousel 2 -->
+	  	<script src="{% static 'vendor/owl/js/owl.carousel.min.js' %}"></script>
+	  	<script src="{% static 'vendor/owl/js/OwlCarousel2Thumbs.min.js' %}"></script>
+	  	<!-- Slider Revolution core JavaScript files -->
+	    
+	    <script src="{% static 'vendor/matchHeight/dist/jquery.matchHeight-min.js' %}"></script>
+	    <!-- Isotope Library-->
+		<script type="text/javascript" src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+		<!-- Masonry Library -->
+		<script type="text/javascript" src="{% static 'js/jquery.masonry.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+		<!-- noUiSlider Library -->
+		<script type="text/javascript" src="{% static 'vendor/nouislider/js/nouislider.js' %}"></script>
+		<!-- fancybox-master Library -->
+		<script type="text/javascript" src="{% static 'vendor/fancybox-master/js/jquery.fancybox.min.js' %}"></script>
+		<!-- Google Map -->
+		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEmXgQ65zpsjsEAfNPP9mBAz-5zjnIZBw"></script> -->
+		<script src="{% static 'js/theme-map.js' %}"></script>
+		<script  type="text/javascript" src="{% static 'vendor/waypoints/lib/jquery.waypoints.min.js' %}"></script>
+	    <script  type="text/javascript" src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' %}"></script>
+		<!-- Form -->
+	    <script src="{% static 'vendor/sweetalert/sweetalert.min.js' %}"></script>
+		<script src="{% static 'js/config-contact.js' %}"></script>
+		<!-- Main Js -->
+		<script src="{% static 'js/custom.js' %}"></script>
+		{% block custom_script %}
+		{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,122 @@
+{% extends 'baseapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Каталог
+{% endblock %}
+
+{% block description %}
+Каталог
+{% endblock %}
+
+{% block keywords %}
+Каталог
+{% endblock %}
+
+{% block content %}
+<div class="page-content">
+		
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-shop-products breadcrumb-section section-box" style="background-image: url(../../static/images/img/banners/breadcrumbs_img.jpg)">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <ul class="breadcrumbs">
+                    <li><a class="breadcrumbs-1" href="{% url 'show_index' %}">Главная</a></li>
+                    <li><a class="breadcrumbs-1" href="{% url 'show_catalog' %}">Каталог</a></li>
+                </ul>
+            </div>	
+        </div>
+    </section>
+    <!-- End Breadcrumb Section -->
+    
+    <!-- Blog Section -->
+    <section class="blog-left-section blog-right-section blog-v1-section blog-v2-section section-box">
+        <div class="container">
+            <div class="woocommerce">
+                <div class="row">
+
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="blog-left-detail">
+                            <div class="blog-detail">
+                                {% if good.get_image %}
+                                <img src="{{ good.get_image.src }}" alt="{{ good.name }}">
+                                {% else %}
+                                <img src="{% static 'images/shop-product-1.jpg' %}" alt="{{ good.name }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="blog-left-sidebar widget-area">
+                            <h3>{{ good.name }}</h3>
+                            <div class="row pt-2 justify-content-around">
+                                <div class="blog-socials col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                    Артикул:
+                                    <span class="blog-socials-inner">
+                                         {{ good.art }}
+                                    </span>
+                                </div>
+                                <div class="blog-socials col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                    Код:
+                                    <span class="blog-socials-inner">
+                                         {{ good.code }}
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="categories widget_product_categories pt-3">
+                                <h3>Цены</h3>
+                                {% if good.get_all_prices %}
+                                <ul class="categories-inner product-categories pb-2">
+                                    {% for price in good.get_all_prices %}
+                                    <li class="cat-item cat-parent">
+                                        <div><span>{{ price.price_type.name }}</span></div>
+                                        <div><span>&#8381 {{ price.price }}</span></div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% else %}
+                                <ul class="categories-inner product-categories">
+                                    <li class="cat-item cat-parent">
+                                        <div><span>Цены не установлены</span></div>
+                                    </li>
+                                </ul>
+                                {% endif %}
+                            </div>
+                            <div class="categories widget_product_categories">
+                                <h3>Свободный остаток</h3>
+                                {% if good.get_stock_balance %}
+                                <ul class="categories-inner product-categories">
+                                    {% for stock_balance in good.get_all_stock_balances %}
+                                    <li class="cat-item cat-parent">
+                                        <div><span>{{ stock_balance.division.name }}</span></div>
+                                        <div><span>{{ stock_balance.free }} {{ stock_balance.good.okei }}</span></div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% else %}
+                                <ul class="categories-inner product-categories">
+                                    <li class="cat-item cat-parent">
+                                        <div><span>Нет в наличии</span></div>
+                                    </li>
+                                </ul>
+                                {% endif %}
+                            </div>
+                            {% if good.manufacturer %}
+                            <div class="tags widget_tag_cloud">
+                                <h3>Производитель</h3>
+                                <div class="tags-inner tagcloud">
+                                    <span><a href="{% url 'show_manufacturer' uid=good.manufacturer.uid %}">{{ good.manufacturer.name }}</a></span>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Section -->
+</div>
+{% endblock %}

@@ -1,0 +1,160 @@
+{% extends 'baseapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+{% if seo_information %}
+{{ seo_information.title }}
+{% else %}
+Тахограф | Карта тахографа | Установка, калибровка, активация, ремонт
+{% endif %}
+{% endblock %}
+
+{% block description %}
+{% if seo_information %}
+{{ seo_information.description }}
+{% else %}
+Осуществляем Установку, активацию, калибровку, демонтаж, монтаж, ремонт тахографов 
+в Белгороде и Белгородской области. Диагностика, замена модуля НКМ.
+{% endif %}
+{% endblock %}
+
+{% block keywords %}
+{% if seo_information %}
+{{ seo_information.keywords }}
+{% else %}
+тахограф, карта тахографа, тахографы белгород, тахограф для водителя, карта водителя для тахографа
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-content">
+
+	<section class="breadcrumb-clean-service breadcrumb-section section-box" style="background-image: url(../../static/images/img/banners/breadcrumbs_img.jpg)">
+		<div class="container">
+			<div class="breadcrumb-inner">
+				<h1>Тахографы</h1>
+				<ul class="breadcrumbs">
+					<li><a class="breadcrumbs-1" href="{% url 'show_index' %}">Главная</a></li>
+					<li><p class="breadcrumbs-2">Тахографы</p></li>
+				</ul>
+			</div>	
+		</div>
+	</section>
+
+	<section class="services-section-page welcome-section section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+					<div class="services-list">
+						<ul>
+							<li><a href="{% url 'show_dvs_page' %}">ДВС</a></li>
+							<li><a href="{% url 'show_kpp_page' %}">КПП</a></li>
+							<li><a href="{% url 'show_reductor_page' %}">РЕДУКТОРЫ</a></li>
+							<li><a href="{% url 'show_tnvd_page' %}">ТНВД</a></li>
+							<li><a href="{% url 'show_forsunki_page' %}">ФОРСУНКИ</a></li>
+							<li class="active"><a href="{% url 'show_tachograph_page' %}">ТАХОГРАФЫ</a></li>
+							<li><a href="{% url 'show_other_page' %}">ПРОЧЕЕ</a></li>
+						</ul>
+					</div>
+					<!-- <div class="discount">
+						<span class="percent">-25%</span>
+						<span class="text-1">APPOINTMENT</span>
+						<span class="text-2">Online</span>
+						<a href="#" class="au-btn au-btn-green btn-small">Make Appointment</a>
+					</div> -->
+				</div>
+				<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+					<div class="services-detail">
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 colmd-12 col-sm-12 col-12">
+								<div class="services-price">
+									<h2 class="special-heading">УСЛУГИ</h2>
+									<table>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Установка цифрового тахографа</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Активация блока СКЗИ тахографа</td>
+
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Калибровка цифрового тахографа (без установки)</td>
+
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Демонтаж  тахографа для проведения ремонта или активации</td>
+
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Монтаж тахографа после проведения ремонтных работ или активации</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> <i class="fa fa-check"></i> Калибровка аналогового тахографа</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> <i class="fa fa-check"></i> Установка/замена/ремонт датчика скорости (с опломбированием)</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Установка/замена/ремонт спидометра (с опломбированием)</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Монтаж короба для тахографа</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Установка/замена и настройка СИМ-карты тахографа (без стоимости карты)</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Ремонт российского тахографа</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Ремонт европейского тахографа</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Диагностика неисправности оборудования на Т/С с составлением акта</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Замена фланцев и переходников</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Замена модуля НКМ (СКЗИ), без учета стоимости НКМ</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Проверка, ремонт, замена фишки ДС и ЦКУ</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> Переустановка операционной системы ЦКУ</td>
+										</tr>
+										<tr>
+											<td style="text-align: left;"><i class="fa fa-check pr-2"></i> И так далее</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<!-- <div class="col-xl-6 col-lg-6 colmd-6 col-sm-12 col-12 pt-3">
+								<div class="services-first">
+									<img src="{% static 'images/img/dvs.jpg' %}" alt="service">
+								</div>
+							</div> -->
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="cta-section cta-our-team cta-hp-5 section-box">
+		<div class="container">
+			<div class="cta-content">
+				<div class="cta-text">
+					<p>Расходники всегда в наличии!</p>
+					<span>Нужно сделать ТО? Мы поможем!</span>
+				</div>
+				{% comment %} <a href="" class="au-btn btn-small" data-toggle="modal" data-target="#modalContactForm">Заказать звонок</a> {% endcomment %}
+				<a href="{% url 'show_contact_page' %}" class="au-btn btn-small">Заказать звонок</a>
+			</div>
+		</div>
+	</section>
+</div>
+
+{% endblock %}
